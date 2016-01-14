@@ -10,6 +10,10 @@ const PATHS = {
 	build: path.join(__dirname, 'build')
 };
 
+process.env.BABEL_ENV = TARGET;
+
+// console.log(process.env);
+
 // module.exports = {
 const common = {
 	// Entry accepts a path or an object of entries
@@ -49,7 +53,10 @@ const common = {
 	},
 	plugins: [
 		new HtmlwebpackPlugin({
-			title: 'Kanban app page'
+			// title: 'Kanban app page'
+			template: 'node_modules/html-webpack-template/index.html',
+			title: 'Kanban app',
+			appMountId: 'app'
 		})
 	]
 };
